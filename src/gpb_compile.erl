@@ -1978,7 +1978,12 @@ format_fixed_encoder(Type, BitLen, BitType) ->
 format_string_encoder() ->
     gpb_codegen:format_fn(
       e_type_string,
-      fun(S, Bin) ->
+      fun
+          (S, Bin) when is_binary(S) ->
+              Utf8 = S,
+              Bin2 = e_varint(byte_size(Utf8), Bin),
+              <<Bin2/binary, Utf8/binary>>;
+          (S, Bin)  ->
               Utf8 = unicode:characters_to_binary(S),
               Bin2 = e_varint(byte_size(Utf8), Bin),
               <<Bin2/binary, Utf8/binary>>
