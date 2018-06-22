@@ -20,7 +20,7 @@
 %%% MA  02110-1301  USA
 
 {application, gpb,
- [{description, "Google protocol buffer compiler and runtime support"},
+ [{description, "Google protocol buffer compiler and runtime support with erlang/otp 20.3"},
   {vsn, {cmd, "git describe --always --tags --match '[0-9]*.[0-9]*'"}},
   {modules, [gpb, gpb_compile, gpb_compile_descr,
              gpb_scan, gpb_parse, gpb_codegen]},
