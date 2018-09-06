@@ -19,7 +19,7 @@
 %%% Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 %%% MA  02110-1301  USA
 
-{application, gpb,
+{application, gpb3,
  [{description, "Google protocol buffer compiler and runtime support"},
   {vsn, {cmd, "git describe --always --tags --match '[0-9]*.[0-9]*'"}},
   {modules, [gpb, gpb_compile, gpb_compile_descr,

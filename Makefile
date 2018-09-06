@@ -247,7 +247,7 @@ TARGETS = \
 	$(incdir)/gpb_version.hrl \
 	$(BEAMS) \
 	$(DESCR_BEAMS) \
-	$(ebin)/gpb.app
+	$(ebin)/gpb3.app
 
 
 all:	$(TARGETS)
@@ -439,7 +439,7 @@ $(descr_src)/gpb_%.erl: $(priv)/proto3/google/protobuf/%.proto $(BEAMS)
 		-s gpb_compile c $(abspath $(<))
 
 # To generate the ebin/gpb.app file, process the src/gpb.app.src file
-$(ebin)/gpb.app: $(src)/gpb.app.src | $(ebin)
+$(ebin)/gpb3.app: $(src)/gpb3.app.src | $(ebin)
 	@echo Generating $@...
 	$(silencer)$(ERL) +B -noshell -noinput -eval " \
 	    try \
